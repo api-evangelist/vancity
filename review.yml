@@ -1,0 +1,93 @@
+aid: vancity
+name: Vancity
+review:
+  question: Does Vancity expose a documented first-party public developer API?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Vancity (Vancouver City Savings Credit Union), the largest community credit
+    union in Canada, exposes no first-party public developer API. The candidate
+    developer subdomains developer.vancity.com and developers.vancity.com do not
+    resolve (DNS failure, connection code 000), and api.vancity.com returns a
+    502 gateway error with no documented, public API surface behind it. No
+    developer portal, API reference, OpenAPI/Swagger definition, SDK, or
+    self-serve API onboarding is published on the corporate site. No
+    specifications were harvested because none are publicly downloadable.
+
+    As a provincially chartered, member-owned co-operative, Vancity reaches
+    Canada's shared payment rails through its banking-technology and payments
+    provider Central 1 — including enhanced Interac e-Transfer real-time digital
+    payments, which Vancity (with First West) was among the first Central 1
+    partners to launch — and through Payments Canada. These are consumer and
+    operational payment capabilities, not a documented Vancity API.
+
+    Canada's federal Consumer-Driven Banking (open-banking) framework is
+    legislated (Budget 2024 and the Fall Economic Statement 2024, overseen by
+    the Financial Consumer Agency of Canada) but not yet operational, so no live
+    CDB or FDX data-access endpoint exists. Vancity publishes no FDX
+    participation and no stated 1033-equivalent posture. Programmatic access to
+    Vancity member data today is aggregator-mediated: Vancity accounts are
+    reachable through third-party aggregators such as Plaid and Flinks
+    (screen-scraping / permissioned data access), not through a first-party API.
+  posture: aggregator-only
+  firstPartyDeveloperPortal: false
+  downloadableSpecs: false
+  fdxParticipant: false
+  cdbPosture: |
+    No published position. Canada's Consumer-Driven Banking framework is
+    legislated but not yet live; Vancity exposes no CDB/open-banking API.
+  authModel: |
+    Not applicable — no public API is exposed, so no first-party developer
+    authentication model (OAuth2/OIDC, API key, or mTLS) is documented.
+  specProvenance: none
+  probes:
+    - url: https://developer.vancity.com
+      status: '000'
+      note: Does not resolve (no DNS / connection failure). No developer portal.
+    - url: https://developers.vancity.com
+      status: '000'
+      note: Does not resolve. No developer portal.
+    - url: https://api.vancity.com
+      status: '502'
+      note: Host responds with a gateway error; no documented public API surface.
+    - url: https://www.vancity.com
+      status: '429'
+      note: Corporate site is live (rate-limited to automated probes). No API/developer section.
+    - url: https://support.vancity.com
+      status: '200'
+      note: Member learning/support hub; documents Interac e-Transfer usage, not an API.
+    - url: https://www.linkedin.com/company/vancity
+      status: '200'
+      note: Confirmed corporate LinkedIn presence.
+  transports:
+    - protocol: REST
+      documented: false
+      note: No public REST API is documented.
+    - protocol: FDX
+      documented: false
+      note: No FDX data-access API is published; Canada's CDB framework is not yet live.
+railsAndAccess:
+  centralOneProvider: true
+  interacETransfer: true
+  paymentsCanada: true
+  aggregators:
+    - Plaid
+    - Flinks
+sources:
+  - url: https://en.wikipedia.org/wiki/Vancity
+    type: Reference
+    note: Institution identity — founding (1946), co-operative charter, ~543k members, ~CA$35B assets, ~60 branches.
+  - url: https://www.vancity.com/
+    type: Website
+    note: Corporate site; no developer or API section present.
+  - url: https://www.central1.com/in_the_news/central-1-vancity-and-first-west-credit-unions-partner-to-launch-enhanced-interac-e-transfer-instant-digital-payments/
+    type: Reference
+    note: Central 1 provides Vancity's enhanced Interac e-Transfer real-time payments capability.
+  - url: https://plaid.com/blog/canadian-coverage-and-country-filter/
+    type: Reference
+    note: Aggregator (Plaid) Canadian coverage includes Vancity-class credit unions; consumer data access is aggregator-mediated.
+  - url: https://www.flinks.com/products/pay
+    type: Reference
+    note: Flinks (Canadian aggregator) provides EFT/Interac account-to-account access across Canadian institutions.

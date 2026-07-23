@@ -1,0 +1,46 @@
+aid: vancity
+url: https://raw.githubusercontent.com/api-evangelist/vancity/refs/heads/main/apis.yml
+name: Vancity
+kind: company
+description: >-
+  Vancity (Vancouver City Savings Credit Union) is a member-owned financial
+  co-operative headquartered in Vancouver, British Columbia, and the largest
+  community credit union in Canada, with over 543,000 members, roughly CA$35
+  billion in assets, and about 60 branches across the Lower Mainland and
+  Vancouver Island. Founded in 1946 as an open-bond credit union, it is
+  provincially chartered and cooperatively governed, offering retail and
+  business banking, mortgages, foreign exchange, Visa cards, insurance, and
+  investment advice, with values-based and impact-lending positioning. Vancity
+  exposes no first-party public developer API portal: developer.vancity.com and
+  developers.vancity.com do not resolve. It participates in Canada's shared
+  payment rails through Central 1 (its banking-technology and payments provider,
+  including enhanced Interac e-Transfer real-time payments) and Payments Canada,
+  while third-party consumer data access is provided through aggregators such as
+  Plaid and Flinks. Canada's federal Consumer-Driven Banking (open banking)
+  framework is legislated but not yet operational, so any programmatic account
+  access today is voluntary and aggregator-mediated rather than served by a
+  documented Vancity API.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- Canada
+- Credit Union
+- Co-operative
+- Interac
+- Payments
+- Data Aggregation
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://www.vancity.com/
+- type: Support
+  url: https://support.vancity.com/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/vancity
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
