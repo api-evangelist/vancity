@@ -1,0 +1,22 @@
+generated: '2026-07-23'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.vancity.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Feb 22 00:09:02 2027 GMT
+  hsts: null
+domains:
+- domain: vancity.com
+  dnssec: false
+  caa:
+  - 0 iodef "mailto:webmaster@vancity.com"
+  - 0 issue "godaddy.com"
+  - 0 issue "digicert.com"
+  - 0 issue "entrust.net"
+  - 0 issue "globalsign.com"
+  - 0 issue "sectigo.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
