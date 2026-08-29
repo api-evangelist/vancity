@@ -20,6 +20,17 @@ description: >-
   framework is legislated but not yet operational, so any programmatic account
   access today is voluntary and aggregator-mediated rather than served by a
   documented Vancity API.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Financial-Services
